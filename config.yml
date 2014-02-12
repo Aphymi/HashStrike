@@ -1,0 +1,21 @@
+#Whether to not-show a message that would get striked (cancels the chat event)
+cancelmessages: true
+#This is in half-hearts; e.g. If set to 5, peeps will take 2.5 hearts of damage when striked
+damage: 7
+
+#Don't play with this unless you know the syntax of regular expressions in Java <3
+
+#Regexes to strike on
+regexes:
+  #Hashtags
+  - '(^| )#[^ ]+'
+  #Swag/yolo
+  - '(^| )[s5]+w+[a4]+g+( |$)'
+  - '(^| )y+[o0]+[l1]+[o0]+( |$)'
+
+#Regexes to not strike
+#These only get the matching bit of a
+#string that would have been striked
+regexes_nostrike:
+  #Hashtags that are just numbers (e.g. #5)
+  - '(^| )#[\d]+'

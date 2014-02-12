@@ -1,0 +1,20 @@
+name: HashStrike
+main: me.aphymi.hashstrike.HashStrike
+version: 0.1.0
+
+commands:
+  hashstrike:
+    description: Central command for HashStrike
+    usage: '/hashstrike [subcommand]'
+    aliases: hs
+
+permissions:
+  hashstrike.toggle:
+    description: Disable or re-enable striking on hashtag
+    default: Op
+  hashstrike.exempt:
+    description: Stops someone from being stricken by this plugin
+    default: False
+  hashstrike.reload:
+    description: Permission to reload the config
+    default: Op
