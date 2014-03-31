@@ -3,15 +3,19 @@ cancelmessages: true
 #This is in half-hearts; e.g. If set to 5, peeps will take 2.5 hearts of damage when striked
 damage: 7
 
-#Don't play with this unless you know the syntax of regular expressions in Java <3
+#Words that should be striked on
+words:
+  - 'swag'
+  - 'yolo'
 
+#Don't play with this unless you know the syntax of regular expressions in Java <3
 #Regexes to strike on
 regexes:
   #Hashtags
-  - '(^| )#[^ ]+'
+  - '\b#[^ ]+'
   #Swag/yolo
-  - '(^| )[s5]+w+[a4]+g+( |$)'
-  - '(^| )y+[o0]+[l1]+[o0]+( |$)'
+  - '\b[s5]+w+[a4]+g+\b'
+  - '\by+[o0]+[l1]+[o0]+\b'
 
 #Regexes to not strike
 #These only get the matching bit of a
@@ -19,3 +23,8 @@ regexes:
 regexes_nostrike:
   #Hashtags that are just numbers (e.g. #5)
   - '(^| )#[\d]+'
+
+#Console commands to send on when someone will get stricken.
+#Use {{USER}} to specify a username
+strike_commands:
+  - 'eco take {{USER}} 25'

@@ -7,8 +7,20 @@ commands:
     description: Central command for HashStrike
     usage: '/hashstrike [subcommand]'
     aliases: hs
+  strikelist:
+    description: Lists the words someone will be striked for saying.
+    usage: '/strikelist'
+    aliases: strikewords
 
 permissions:
+  hashstrike.*:
+    description: Gives all HashStrike permissions
+    children:
+    - 'hashstrike.toggle'
+    - 'hashstrike.exempt'
+    - 'hashstrike.reload'
+    - 'hashstrike.add'
+    - 'hashstrike.remove'
   hashstrike.toggle:
     description: Disable or re-enable striking on hashtag
     default: Op
@@ -18,3 +30,12 @@ permissions:
   hashstrike.reload:
     description: Permission to reload the config
     default: Op
+  hashstrike.add:
+    description: Permission to add words to the strike list
+    default: Op
+  hashstrike.remove:
+    description: Permission to remove words from the strike list
+    default: Op
+  hashstrike.strikelist:
+    description: Permission to use /strikelist
+    default: True

@@ -10,5 +10,7 @@ public final class HashStrike extends JavaPlugin {
 		getServer().getPluginManager().registerEvents(new HashStrikeListener(this), this);
 		HashStrikeExecutor executor = new HashStrikeExecutor();
 		getCommand("hashstrike").setExecutor(executor);
+		getCommand("strikelist").setExecutor(executor);
+		getCommand("strikewords").setExecutor(executor);
 	}
 }
